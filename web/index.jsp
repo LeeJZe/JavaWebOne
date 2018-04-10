@@ -12,7 +12,7 @@
   </head>
   <body>
     <%
-        out.println("hello world! test 001");
+        out.println("hello world! test 001 test 002 ");
     %>
   </body>
 </html>
