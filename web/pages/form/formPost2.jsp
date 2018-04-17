@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.Enumeration" %><%--
   Created by IntelliJ IDEA.
   User: 49539
   Date: 2018/4/16
@@ -20,5 +20,20 @@
     年龄：<%=request.getParameter("age")%>
     google:<%=request.getParameter("google")%>
     baidu:<%=request.getParameter("baidu")%>
+    <h1>读取表单所有参数</h1>
+    <table border="1" align="center" width="100%">
+        <tr><th>参数名</th><th>参数值</th></tr>
+        <%
+            Enumeration paraNames = request.getParameterNames();
+                while (paraNames.hasMoreElements()){
+                    String paraName = (String)paraNames.nextElement();
+                    out.print("<tr><td>"+paraName+"</td>\n");
+                    String paraValue = request.getParameter(paraName);
+                    out.print("<td>"+paraValue+"</td></tr>\n");
+
+
+                }
+        %>
+    </table>
 </body>
 </html>
